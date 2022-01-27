@@ -1,0 +1,349 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GlobalHandler" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uico="http://schemas.uipath.com/workflow/activities/contracts" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="errorInfo" Type="InArgument(uico:ExceptionHandlerArgs)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="result" Type="OutArgument(uico:ErrorAction)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>933,2952</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>GlobalHandler_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="60">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Activities.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Word.Activities</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This sequence steps in during execution when the project encounters an unmanaged error.&#xA;&#xA;Important: Arguments 'errorInfo' and 'result' should not be removed." DisplayName="Global Exception Handler" sap:VirtualizedContainerService.HintSize="943,2787" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="answer" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="retry" />
+      <Variable x:TypeArguments="x:String" Default="EmailListReserve" Name="AssetEmailListReserve" />
+      <Variable x:TypeArguments="x:String" Default="PathJVTPL" Name="AssetPartTemplate" />
+      <Variable x:TypeArguments="x:String" Default="PathJVTPL" Name="AssetPathJVTPL" />
+      <Variable x:TypeArguments="x:String" Name="DateTimeStampEmail" />
+      <Variable x:TypeArguments="x:String" Name="EmailListReserve" />
+      <Variable x:TypeArguments="x:String" Name="ValueAssetPartTemplate" />
+      <Variable x:TypeArguments="x:String" Name="PartTPL" />
+      <Variable x:TypeArguments="x:String" Name="strEmailFrom" />
+      <Variable x:TypeArguments="x:String" Name="strEmailPort" />
+      <Variable x:TypeArguments="x:String" Name="strEmailServer" />
+      <Variable x:TypeArguments="x:Int32" Name="intEmailPort" />
+      <Variable x:TypeArguments="x:String" Name="PathFileTaskScreenshot" />
+      <Variable x:TypeArguments="x:String" Name="strEmailBody" />
+      <Variable x:TypeArguments="x:String" Name="ValueAssetSubjectMailGlobalHandler" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="UpdateStat Failed" sap:VirtualizedContainerService.HintSize="901,578" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Default="PathJVTPL" Name="AssetPartTemplate" />
+        <Variable x:TypeArguments="x:String" Name="ValueAssetPartTemplate" />
+        <Variable x:TypeArguments="x:String" Name="PartReserve" />
+        <Variable x:TypeArguments="x:String" Default="[“/N/TNTL/RTR1026”]" Name="TcodeReserve" />
+        <Variable x:TypeArguments="x:String" Default="ClearReserveFile\RM\Process\" Name="PathFileRMProcessing" />
+        <Variable x:TypeArguments="x:String" Default="[“JV ”]" Name="FilenameCreateReserveRMW1" />
+        <Variable x:TypeArguments="x:String" Default=" Reserve RM.xlsx" Name="FilenameCreateReserveRMW2" />
+        <Variable x:TypeArguments="x:String" Default="[“Reserve RM”]" Name="SessionNameRM" />
+        <Variable x:TypeArguments="x:String" Default="ReadResultExcel\" Name="PathReadResultExcel" />
+        <Variable x:TypeArguments="x:String" Default=".xls" Name="TypeXLS" />
+        <Variable x:TypeArguments="x:String" Default="ResultClearReserveRM.xls" Name="FilenameResultCreateReserve" />
+        <Variable x:TypeArguments="x:String" Default="ClearReserveFile\SP\Process\" Name="PathFileSPProcessing" />
+        <Variable x:TypeArguments="x:String" Default="ReadResultExcel\" Name="PathReadResultExcelSP" />
+        <Variable x:TypeArguments="x:String" Default="ResultClearReserveSP.xls" Name="FilenameResultCreateReserveSP" />
+        <Variable x:TypeArguments="x:String" Default="Submitted\" Name="PathSendSubmited" />
+        <Variable x:TypeArguments="x:String" Default="ResultClearReserveRM_" Name="FilenameResultCreateReserveModify" />
+        <Variable x:TypeArguments="x:String" Default="ResultClearReserveSP_" Name="FilenameResultCreateReserveSPModify" />
+        <Variable x:TypeArguments="x:Boolean" Name="ExitsResultSP" />
+        <Variable x:TypeArguments="x:Boolean" Name="ExitsResultRM" />
+        <Variable x:TypeArguments="x:String" Default="strConSQL" Name="AssetStrConSQL" />
+        <Variable x:TypeArguments="x:String" Default="strSubFolderGlobal" Name="AssetSubFolderGlobal" />
+        <Variable x:TypeArguments="x:String" Name="SubFolderGlobal" />
+        <Variable x:TypeArguments="x:String" Name="StrConSQL" />
+        <Variable x:TypeArguments="ui:DatabaseConnection" Name="OutputConSQL" />
+        <Variable x:TypeArguments="sd:DataTable" Name="ResultUpdateStateFailedProcess" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[AssetSubFolderGlobal]" DisplayName="Get Asset" FolderPath="ProductionModern" sap:VirtualizedContainerService.HintSize="444,139" sap2010:WorkflowViewState.IdRef="GetRobotAsset_7">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[SubFolderGlobal]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotCredential Password="{x:Null}" TimeoutMS="{x:Null}" AssetName="[AssetStrConSQL]" DisplayName="Get Credential" FolderPath="[SubFolderGlobal]" sap:VirtualizedContainerService.HintSize="444,80" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Username="[StrConSQL]" />
+      <ui:DatabaseConnect DatabaseConnection="[OutputConSQL]" DisplayName="Connect DB" sap:VirtualizedContainerService.HintSize="444,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="[StrConSQL]" />
+      <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[ResultUpdateStateFailedProcess]" DisplayName="Update Status" sap:VirtualizedContainerService.HintSize="444,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" ProviderName="System.Data.SqlClient" Sql="UPDATE [dbo].[ReserveData] Set ReserveNo = NULL ,TypeOfReserve = 'PEN' ,ModifyDateTime = NULL ,ModifyBy = NULL,StatusReserve = 'P' WHERE CreateDateTime &gt;= dateadd(DD, 0, cast(getdate() as date))" ConnectionString="[StrConSQL]">
+        <ui:ExecuteQuery.Parameters>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:ExecuteQuery.Parameters>
+      </ui:ExecuteQuery>
+    </Sequence>
+    <Sequence sap:VirtualizedContainerService.HintSize="901,68" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Default="SubjectMailCreateReserveGlobalHandler" Name="AssetSubjectMailGlobalHandler" />
+        <Variable x:TypeArguments="x:String" Default="ProductionModern" Name="FolderProductionModern" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[AssetPartTemplate]" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="444,139" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[ValueAssetPartTemplate]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[AssetSubjectMailGlobalHandler]" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="444,139" sap2010:WorkflowViewState.IdRef="GetRobotAsset_6">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[ValueAssetSubjectMailGlobalHandler]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <Assign sap:VirtualizedContainerService.HintSize="444,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[PartTPL]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[ValueAssetPartTemplate+"TemplateCreateReserve\"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[AssetEmailListReserve]" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="444,139" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[EmailListReserve]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="EMAIL_FROM" DisplayName="Get Asset" FolderPath="[FolderProductionModern]" sap:VirtualizedContainerService.HintSize="444,139" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[strEmailFrom]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="EMAIL_PORT" DisplayName="Get Asset" FolderPath="[FolderProductionModern]" sap:VirtualizedContainerService.HintSize="444,139" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[strEmailPort]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="EMAIL_SERVER" DisplayName="Get Asset" FolderPath="[FolderProductionModern]" sap:VirtualizedContainerService.HintSize="444,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_5">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[strEmailServer]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <Assign sap:VirtualizedContainerService.HintSize="444,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[intEmailPort]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">[Cint(strEmailPort)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="444,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[DateTimeStampEmail]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[DateAndTime.Now.ToString("dd/MM/yyyy hh:mm:ss").ToString]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="444,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[PathFileTaskScreenshot]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">
+            <Literal x:TypeArguments="x:String" Value="" />
+          </InArgument>
+        </Assign.Value>
+      </Assign>
+      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="444,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="before try" />
+    </Sequence>
+    <If sap2010:Annotation.AnnotationText="Choose the action to be taken after the Global Exception Handler steps in: &#xA;&#xA;Continue - The exception is re-thrown.&#xA;&#xA;Ignore - The exception is ignored, and the execution continues from the next activity.&#xA;&#xA;Retry - The activity which threw the exception is retried.&#xA;&#xA;Abort - The execution stops after running the current handler." Condition="[errorInfo.RetryCount &lt; 1]" DisplayName="Choose Next Behaviour" sap:VirtualizedContainerService.HintSize="901,1909" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign.To>
+            <OutArgument x:TypeArguments="uico:ErrorAction">[result]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="uico:ErrorAction">[ErrorAction.Retry]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="594,1593" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence sap:VirtualizedContainerService.HintSize="552,1401" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Default="TPLEmailErrorHandling.docx" Name="TPLFileGlobal" />
+              <Variable x:TypeArguments="x:String" Default="TPLEmailErrorHandlingTemp.docx" Name="TPLFileGlobalTemp" />
+              <Variable x:TypeArguments="ui:Image" Name="Screenshot" />
+              <Variable x:TypeArguments="x:String" Default="RFA : Failed!!! During Create reserve account process" Name="SubjectHandling" />
+              <Variable x:TypeArguments="x:String" Name="resultActivityInfo" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot" sap:VirtualizedContainerService.HintSize="510,68" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[Screenshot]">
+              <ui:TakeScreenshot.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7c9c4a28-3c1f-4618-b3b9-23f88d3383e2">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TakeScreenshot.Target>
+            </ui:TakeScreenshot>
+            <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[PathFileTaskScreenshot]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ValueAssetPartTemplate+"CreateReserveFile\TaskScreenshot\TaskScreenshot.png"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:SaveImage DisplayName="Save Image" FileName="[PathFileTaskScreenshot]" sap:VirtualizedContainerService.HintSize="510,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Screenshot]" />
+            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[PartTPL+TPLFileGlobalTemp]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[PartTPL+TPLFileGlobal]" />
+            <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[PartTPL+TPLFileGlobalTemp]" sap:VirtualizedContainerService.HintSize="510,487" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+              <p:WordApplicationScope.Body>
+                <ActivityAction x:TypeArguments="ui:WordDocument">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="476,378" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[Date.now.ToString]" ReplaceAll="True" Search="{}{$ErrorDate}" />
+                    <p:WordReadText DisplayName="Read Text" sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="WordReadText_1" Text="[strEmailBody]" />
+                  </Sequence>
+                </ActivityAction>
+              </p:WordApplicationScope.Body>
+            </p:WordApplicationScope>
+            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" Email="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[strEmailBody+vbLf+vblf+&quot;Technical Error :: &quot;+errorInfo.Exception.ToString]" DisplayName="Send SMTP Mail Message" EnableSSL="True" From="[strEmailFrom]" sap:VirtualizedContainerService.HintSize="510,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Port="[intEmailPort]" SecureConnection="None" Server="[strEmailServer]" Subject="[ValueAssetSubjectMailGlobalHandler]" To="[EmailListReserve]">
+              <ui:SendMail.Files>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                  <InArgument x:TypeArguments="x:String">[PathFileTaskScreenshot]</InArgument>
+                </scg:List>
+              </ui:SendMail.Files>
+            </ui:SendMail>
+            <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[resultActivityInfo]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[errorinfo.ActivityInfo.ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+          <Assign sap:VirtualizedContainerService.HintSize="552,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign.To>
+              <OutArgument x:TypeArguments="uico:ErrorAction">[result]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="uico:ErrorAction">[ErrorAction.Abort]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

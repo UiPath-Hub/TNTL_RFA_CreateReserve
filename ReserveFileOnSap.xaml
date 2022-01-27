@@ -1,0 +1,1158 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ReserveFileOnSap" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="759,515" sap2010:WorkflowViewState.IdRef="ReserveFileOnSap_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="478,328" sap2010:WorkflowViewState.IdRef="Sequence_32">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,236" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_31">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="ReserveFileOnSap" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Reserve File on SAP" sap:VirtualizedContainerService.HintSize="486,522" sap2010:WorkflowViewState.IdRef="Sequence_30">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="DateStampFile" />
+                <Variable x:TypeArguments="x:String" Default="AllFileCreateReserveFinishProcess\WaitSendEmailTypeSuccess\" Name="PathFileSendEmail" />
+                <Variable x:TypeArguments="x:String" Default="F" Name="StaTypeUploadFailed" />
+                <Variable x:TypeArguments="x:String" Default="AllFileCreateReserveFinishProcess\Failed\" Name="PathFileTypeFailedSendEmail" />
+                <Variable x:TypeArguments="x:String" Name="PartReserve" />
+                <Variable x:TypeArguments="x:String" Name="ValueAssetPartTemplate" />
+                <Variable x:TypeArguments="x:String" Default="PathJVTPL" Name="AssetPartTemplate" />
+                <Variable x:TypeArguments="x:String" Name="AssetParthReserve" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="444,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Create reserve on sap" />
+              <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[AssetPartTemplate]" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="444,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+                <ui:GetRobotAsset.Value>
+                  <OutArgument x:TypeArguments="x:String">[ValueAssetPartTemplate]</OutArgument>
+                </ui:GetRobotAsset.Value>
+              </ui:GetRobotAsset>
+              <Assign sap:VirtualizedContainerService.HintSize="444,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[PartReserve]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[ValueAssetPartTemplate]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Application: SAP Easy Access" sap:VirtualizedContainerService.HintSize="444,52" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" Version="V1">
+                <uix:NApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                    </ActivityAction.Argument>
+                    <Sequence sap:VirtualizedContainerService.HintSize="1572,12352" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Sequence RM" sap:VirtualizedContainerService.HintSize="1530,6503" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:Int32" Name="CountTabSessionName" />
+                          <Variable x:TypeArguments="x:String" Default="ตั้ง" Name="WdTHCreate" />
+                          <Variable x:TypeArguments="x:String" Default="ล้าง" Name="WdTHClear" />
+                          <Variable x:TypeArguments="x:String" Default=" Reserve RM.xlsx" Name="FilenameCreateReserveRMW2" />
+                          <Variable x:TypeArguments="x:String" Name="ResultTypeReserve" />
+                          <Variable x:TypeArguments="x:String" Default="ScreenShotResultCreateReserve\" Name="PathTakeScreenShot" />
+                          <Variable x:TypeArguments="ui:Image" Name="TSCPNGResultReserve" />
+                          <Variable x:TypeArguments="x:String" Default="Screenshort_DocRunNo" Name="FilenameTSCResultReserveW1" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\RM\" Name="PathFileRMBeforeProcess" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\RM\Success\" Name="PathFileRMSuccess" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\RM\Process\" Name="PathFileRMProcessing" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\RM\Error\" Name="PathFileRMError" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\RM\Failed\" Name="PathFileRMFailed" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1488,6409" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Directory.GetFiles(ValueAssetPartTemplate+PathFileRMBeforeProcess)]">
+                          <ui:ForEach.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1452,6273" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:String" Default="JV ตั้ง Reserve RM.xlsx" Name="FilenameProcessReserveRM" />
+                                  <Variable x:TypeArguments="x:String" Default="JV ตั้ง Reserve Spare Part.xlsx" Name="FilenameProcessReserveSP" />
+                                  <Variable x:TypeArguments="x:String" Name="GetDocNoExcel" />
+                                  <Variable x:TypeArguments="x:String" Name="ResultDocrunning" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileRMProcessing+FilenameProcessReserveRM]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="1410,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[item.ToString]" />
+                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'OkCodeField  okcd'" sap:VirtualizedContainerService.HintSize="1410,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[TcodeReserve]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="72174033-a5a9-4687-905a-b787fe08e5f4" InformativeScreenshot="6b4f073630fd15225e7ef6ce5f47bcd1" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access' /&gt;&lt;sap id='tbar[0]/okcd' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'OkCodeField  okcd'" sap:VirtualizedContainerService.HintSize="1410,155" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                  <ui:SendHotkey.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b18d4b50-024c-44e0-9a5d-88c255f83073" InformativeScreenshot="a0eeb0b41efbbde3e908531c016bab32" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access' /&gt;&lt;sap id='tbar[0]/okcd' /&gt;" WaitForReady="COMPLETE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:SendHotkey.Target>
+                                </ui:SendHotkey>
+                                <Assign sap:VirtualizedContainerService.HintSize="1410,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[CountTabSessionName]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Local'" sap:VirtualizedContainerService.HintSize="1410,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[PartReserve+PathFileRMProcessing+FilenameCreateReserveRMW1]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fc00f6f6-9aae-464d-8986-6035301f180e" InformativeScreenshot="7e1dd76c6e657733e1e2b087198d5016" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='usr/ctxtP_WORK' /&gt;" WaitForReady="COMPLETE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="1410,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="1410,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[WdTHCreate]" />
+                                <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1410,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'CTextField Local'" sap:VirtualizedContainerService.HintSize="1410,155" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="v" KeyModifiers="Ctrl">
+                                  <ui:SendHotkey.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="410862cc-85b2-4f4f-9b08-0a2e153d12db" InformativeScreenshot="782bf4e9d002cf2241deceacd9096cde" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='usr/ctxtP_WORK' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:SendHotkey.Target>
+                                </ui:SendHotkey>
+                                <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1410,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Local'" sap:VirtualizedContainerService.HintSize="1410,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[FilenameCreateReserveRMW2]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fc00f6f6-9aae-464d-8986-6035301f180e" InformativeScreenshot="782bf4e9d002cf2241deceacd9096cde" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='usr/ctxtP_WORK' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1410,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                                <ui:InterruptibleDoWhile Condition="[CountTabSessionName &lt; 5]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1410,476" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                                  <ui:InterruptibleDoWhile.Body>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,309" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,117" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                        <ui:SendHotkey.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="ca37e9ec-2c8e-40de-acc9-9bc100bbd06b" WaitForReady="COMPLETE">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                          </ui:Target>
+                                        </ui:SendHotkey.Target>
+                                      </ui:SendHotkey>
+                                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[CountTabSessionName]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[CountTabSessionName+1]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </ui:InterruptibleDoWhile.Body>
+                                </ui:InterruptibleDoWhile>
+                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Name'" sap:VirtualizedContainerService.HintSize="1410,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[SessionNameRM]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="31728732-9c48-42ae-a0fc-840325dfed96" InformativeScreenshot="45696b4a00196fdf01eaac0d662df3a6" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='usr/txtP_GROUP' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="1410,117" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="f8" KeyModifiers="None" SpecialKey="True">
+                                  <ui:SendHotkey.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b18d4b50-024c-44e0-9a5d-88c255f83073" WaitForReady="COMPLETE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:SendHotkey.Target>
+                                </ui:SendHotkey>
+                                <Delay Duration="00:02:00" sap:VirtualizedContainerService.HintSize="1410,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1410,2165" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                  <TryCatch.Try>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="476,1933" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot Status Reserve" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[TSCPNGResultReserve]">
+                                        <ui:TakeScreenshot.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="efba0866-ce53-4a34-83b8-d1e56219e66c" InformativeScreenshot="f1044cbc03fcabeac5c71a1b2f317c2f" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;" WaitForReady="COMPLETE">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                          </ui:Target>
+                                        </ui:TakeScreenshot.Target>
+                                      </ui:TakeScreenshot>
+                                      <Assign sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[ResultDocrunning]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <Literal x:TypeArguments="x:String" Value="" />
+                                          </InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <Assign sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[ResultTypeReserve]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <Literal x:TypeArguments="x:String" Value="" />
+                                          </InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,62" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Before get type" />
+                                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Status Reserve" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                                        <ui:GetValue.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="93ee422b-9a7c-4b0e-bdff-dbb14d3608fb" InformativeScreenshot="583ee4cbe721db9c1bff29c8aadf2568" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='usr/lbl[14,3]' /&gt;" WaitForReady="COMPLETE">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                          </ui:Target>
+                                        </ui:GetValue.Target>
+                                        <ui:GetValue.Value>
+                                          <OutArgument x:TypeArguments="x:String">[ResultTypeReserve]</OutArgument>
+                                        </ui:GetValue.Value>
+                                      </ui:GetValue>
+                                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,62" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;ResultTypeReserve :&quot;+ResultTypeReserve]" />
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;ResultTypeReserve =&quot;+ResultTypeReserve]" />
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Document Running" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                                        <ui:GetValue.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="71f99c08-c7d7-4ecd-9269-859bc1c63c43" InformativeScreenshot="6c7d6231499f967b4739a5c18c58fcd8" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='usr/lbl[1,3]' /&gt;" WaitForReady="COMPLETE">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                          </ui:Target>
+                                        </ui:GetValue.Target>
+                                        <ui:GetValue.Value>
+                                          <OutArgument x:TypeArguments="x:String">[ResultDocrunning]</OutArgument>
+                                        </ui:GetValue.Value>
+                                      </ui:GetValue>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[ResultTypeReserve]" />
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[ResultDocrunning]" />
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                      <Assign sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[DateStampFile]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">["_"+DateAndTime.Now.ToString("yyyy_MM_dd hh_mm_ss").ToString]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <ui:SaveImage DisplayName="Save Image Temp" FileName="[PartReserve+PathTakeScreenShot+FilenameTSCResultReserveW1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+FilenameTSCResultReserveW2]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[TSCPNGResultReserve]" />
+                                      <ui:SaveImage DisplayName="Save Image Path SendMail" FileName="[PartReserve+PathFileSendEmail+FilenameTSCResultReserveW1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+FilenameTSCResultReserveW2]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="SaveImage_2" Image="[TSCPNGResultReserve]" />
+                                      <ui:CopyFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileSendEmail+mvfilereserveRM1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+mvfilereserveRM2]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[PartReserve+PathFileRMProcessing+FilenameProcessReserveRM]" />
+                                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,62" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="Keep file and image" />
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;End Try&quot;]" />
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                    </Sequence>
+                                  </TryCatch.Try>
+                                  <TryCatch.Catches>
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="480,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ActivityAction x:TypeArguments="s:Exception">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                        </ActivityAction.Argument>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="476,720" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[DateStampFile]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["_"+DateAndTime.Now.ToString("yyyy_MM_dd hh_mm_ss").ToString]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <ui:SaveImage DisplayName="Save Image" FileName="[PathTakeScreenShot+FilenameTSCResultReserveW1+DateStampFile.ToString+FilenameTSCResultReserveW2]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="SaveImage_3" Image="[TSCPNGResultReserve]" />
+                                          <ui:SaveImage DisplayName="Save Image" FileName="[PathFileTypeFailedSendEmail+FilenameTSCResultReserveW1+DateStampFile.ToString+FilenameTSCResultReserveW2]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="SaveImage_4" Image="[TSCPNGResultReserve]" />
+                                          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[PathFileTypeFailedSendEmail+mvfilereserveRM1+DateStampFile.ToString+mvfilereserveRM2]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[PathFileRMProcessing+FilenameProcessReserveRM]" />
+                                          <Assign sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[ResultTypeReserve]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[StaTypeUploadFailed]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </Catch>
+                                  </TryCatch.Catches>
+                                </TryCatch>
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1410,52" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;ResultRypeReserve =&quot;+ResultTypeReserve]" />
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:CommentOut>
+                                <If Condition="[ResultTypeReserve = StaTypeUploadSuccess]" sap:VirtualizedContainerService.HintSize="1410,670" sap2010:WorkflowViewState.IdRef="If_2">
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="426,254" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileRMSuccess+mvfilereserveRM1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+mvfilereserveRM2]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[PartReserve+PathFileRMProcessing+FilenameProcessReserveRM]" />
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="939,509" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <If Condition="[ResultTypeReserve = StaTypeUploadError]" sap:VirtualizedContainerService.HintSize="897,415" sap2010:WorkflowViewState.IdRef="If_1">
+                                        <If.Then>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="426,254" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileRMError+mvfilereserveRM1+ResultDocrunning.ToString.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+mvfilereserveRM2]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="True" Path="[PartReserve+PathFileRMProcessing+FilenameProcessReserveRM]" />
+                                          </Sequence>
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="426,254" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileRMFailed+mvfilereserveRM1+ResultDocrunning.ToString.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+mvfilereserveRM2]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_4" Overwrite="True" Path="[PartReserve+PathFileRMProcessing+FilenameProcessReserveRM]" />
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke UPDATESTAT1 workflow" sap:VirtualizedContainerService.HintSize="1410,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="UPDATESTAT1.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="argStatusReserve">[ResultTypeReserve]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="argDoNoRFA">[ResultDocrunning]</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="1410,117" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                  <ui:SendHotkey.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b5e5e962-463b-480b-8c9b-bef6453bb12b">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:SendHotkey.Target>
+                                </ui:SendHotkey>
+                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="1410,117" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                  <ui:SendHotkey.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b5e5e962-463b-480b-8c9b-bef6453bb12b">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:SendHotkey.Target>
+                                </ui:SendHotkey>
+                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'OkCodeField  okcd'" sap:VirtualizedContainerService.HintSize="1410,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="/n[k(enter)]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c99645b8-4112-430d-827a-1a3704704db3" InformativeScreenshot="43324a4c17dc2acf88caf275db473ec7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='tbar[0]/okcd' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1410,62" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="pass" />
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEach.Body>
+                        </ui:ForEach>
+                      </Sequence>
+                      <Sequence DisplayName="Sequence SP" sap:VirtualizedContainerService.HintSize="1530,5715" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:Int32" Name="CountTabSessionName" />
+                          <Variable x:TypeArguments="x:String" Default="ตั้ง" Name="WdTHCreate" />
+                          <Variable x:TypeArguments="x:String" Default="ล้าง" Name="WdTHClear" />
+                          <Variable x:TypeArguments="x:String" Default=" Reserve RM.xlsx" Name="FilenameCreateReserveRMW2" />
+                          <Variable x:TypeArguments="x:String" Name="ResultTypeReserve" />
+                          <Variable x:TypeArguments="x:String" Default="ScreenShotResultCreateReserve\" Name="PathTakeScreenShot" />
+                          <Variable x:TypeArguments="ui:Image" Name="TSCPNGResultReserve" />
+                          <Variable x:TypeArguments="x:String" Default="ScreenShotCreateReserve_DocNo" Name="FilenameTSCResultReserveW1" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\RM\" Name="PathFileRMBeforeProcess" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\RM\Success\" Name="PathFileRMSuccess" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\RM\Process\" Name="PathFileRMProcessing" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\RM\Error\" Name="PathFileRMError" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\SP\" Name="PathFileSPBeforeProcess" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\SP\Success\" Name="PathFileSPSuccess" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\SP\Process\" Name="PathFileSPProcessing" />
+                          <Variable x:TypeArguments="x:String" Default="CreateReserveFile\SP\Error\" Name="PathFileSPError" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1362,5621" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(PartReserve+PathFileSPBeforeProcess)]">
+                          <ui:ForEach.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1326,5485" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:String" Default="JV ตั้ง Reserve RM.xlsx" Name="FilenameProcessReserveRM" />
+                                  <Variable x:TypeArguments="x:String" Default="JV ตั้ง Reserve Spare Part.xlsx" Name="FilenameProcessReserveSP" />
+                                  <Variable x:TypeArguments="x:String" Name="GetDocNoExcel" />
+                                  <Variable x:TypeArguments="x:String" Default="[“JV ”]" Name="FilenameCreateReserveSPW1" />
+                                  <Variable x:TypeArguments="x:String" Default=" Reserve Spare Part.xlsx" Name="FilenameCreateReserveSPW2" />
+                                  <Variable x:TypeArguments="x:String" Name="ResultDocrunning" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1284,62" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[item.ToString]" />
+                                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileSPProcessing+FilenameProcessReserveSP]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="1284,160" sap2010:WorkflowViewState.IdRef="MoveFile_5" Overwrite="True" Path="[item.ToString]" />
+                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1284,62" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="Move file" />
+                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'OkCodeField  okcd'" sap:VirtualizedContainerService.HintSize="1284,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" Text="[TcodeReserve+ &quot;[k(enter)]&quot;]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d209ba2-726a-48f5-a924-db10950b444d" InformativeScreenshot="43324a4c17dc2acf88caf275db473ec7" Selector="&lt;sap id='tbar[0]/okcd' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <Assign sap:VirtualizedContainerService.HintSize="1284,61" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[CountTabSessionName]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Local'" sap:VirtualizedContainerService.HintSize="1284,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[PartReserve+PathFileSPProcessing+FilenameCreateReserveSPW1]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fc00f6f6-9aae-464d-8986-6035301f180e" InformativeScreenshot="7e1dd76c6e657733e1e2b087198d5016" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='usr/ctxtP_WORK' /&gt;" WaitForReady="COMPLETE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1284,62" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[PartReserve+PathFileSPProcessing+FilenameCreateReserveSPW1]" />
+                                <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="1284,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                                <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="1284,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_2" Text="[WdTHCreate]" />
+                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'CTextField Local'" sap:VirtualizedContainerService.HintSize="1284,155" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="v" KeyModifiers="Ctrl">
+                                  <ui:SendHotkey.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="410862cc-85b2-4f4f-9b08-0a2e153d12db" InformativeScreenshot="7e1dd76c6e657733e1e2b087198d5016" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='usr/ctxtP_WORK' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:SendHotkey.Target>
+                                </ui:SendHotkey>
+                                <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="1284,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Local'" sap:VirtualizedContainerService.HintSize="1284,134" sap2010:WorkflowViewState.IdRef="TypeInto_8" Text="[FilenameCreateReserveSPW2]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fc00f6f6-9aae-464d-8986-6035301f180e" InformativeScreenshot="7e1dd76c6e657733e1e2b087198d5016" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='usr/ctxtP_WORK' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="1284,22" sap2010:WorkflowViewState.IdRef="Delay_8" />
+                                <ui:InterruptibleDoWhile Condition="[CountTabSessionName &lt; 5]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1284,476" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+                                  <ui:InterruptibleDoWhile.Body>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,309" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,117" sap2010:WorkflowViewState.IdRef="SendHotkey_8" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                        <ui:SendHotkey.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="ca37e9ec-2c8e-40de-acc9-9bc100bbd06b" WaitForReady="COMPLETE">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                          </ui:Target>
+                                        </ui:SendHotkey.Target>
+                                      </ui:SendHotkey>
+                                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[CountTabSessionName]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[CountTabSessionName+1]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </ui:InterruptibleDoWhile.Body>
+                                </ui:InterruptibleDoWhile>
+                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Name'" sap:VirtualizedContainerService.HintSize="1284,134" sap2010:WorkflowViewState.IdRef="TypeInto_9" Text="[SessionNameSP]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="31728732-9c48-42ae-a0fc-840325dfed96" InformativeScreenshot="90e5154351f6c8306b23339cf5022ae6" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='usr/txtP_GROUP' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="1284,117" sap2010:WorkflowViewState.IdRef="SendHotkey_9" Key="f8" KeyModifiers="None" SpecialKey="True">
+                                  <ui:SendHotkey.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b18d4b50-024c-44e0-9a5d-88c255f83073" WaitForReady="COMPLETE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:SendHotkey.Target>
+                                </ui:SendHotkey>
+                                <Delay Duration="00:02:00" sap:VirtualizedContainerService.HintSize="1284,22" sap2010:WorkflowViewState.IdRef="Delay_9" />
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1284,1930" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                  <TryCatch.Try>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="1039,1698" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'menu button'" sap:VirtualizedContainerService.HintSize="997,106" sap2010:WorkflowViewState.IdRef="TakeScreenshot_2" Screenshot="[TSCPNGResultReserve]">
+                                        <ui:TakeScreenshot.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="efba0866-ce53-4a34-83b8-d1e56219e66c" InformativeScreenshot="f1044cbc03fcabeac5c71a1b2f317c2f" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;" WaitForReady="COMPLETE">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                          </ui:Target>
+                                        </ui:TakeScreenshot.Target>
+                                      </ui:TakeScreenshot>
+                                      <Assign sap:VirtualizedContainerService.HintSize="997,61" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[ResultDocrunning]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <Literal x:TypeArguments="x:String" Value="" />
+                                          </InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <Assign sap:VirtualizedContainerService.HintSize="997,61" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[ResultTypeReserve]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <Literal x:TypeArguments="x:String" Value="" />
+                                          </InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'Label  S'" sap:VirtualizedContainerService.HintSize="997,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                                        <ui:GetValue.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c791a46f-7393-4dc9-94c7-b3a7ee7204e8" InformativeScreenshot="c7df85a7a8aaf9d43d20b0a4cac44429" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='usr/lbl[14,3]' /&gt;">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                            <ui:Target.WaitForReady>
+                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                            </ui:Target.WaitForReady>
+                                          </ui:Target>
+                                        </ui:GetValue.Target>
+                                        <ui:GetValue.Value>
+                                          <OutArgument x:TypeArguments="x:String">[ResultTypeReserve]</OutArgument>
+                                        </ui:GetValue.Value>
+                                      </ui:GetValue>
+                                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Document Running" sap:VirtualizedContainerService.HintSize="997,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                                        <ui:GetValue.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="71f99c08-c7d7-4ecd-9269-859bc1c63c43" InformativeScreenshot="6c7d6231499f967b4739a5c18c58fcd8" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='usr/lbl[1,3]' /&gt;" WaitForReady="COMPLETE">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                          </ui:Target>
+                                        </ui:GetValue.Target>
+                                        <ui:GetValue.Value>
+                                          <OutArgument x:TypeArguments="x:String">[ResultDocrunning]</OutArgument>
+                                        </ui:GetValue.Value>
+                                      </ui:GetValue>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="997,52" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[ResultTypeReserve]" />
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="997,52" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[ResultDocrunning]" />
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                      <If Condition="[ResultTypeReserve.ToString = &quot;S&quot;]" sap:VirtualizedContainerService.HintSize="997,780" sap2010:WorkflowViewState.IdRef="If_3">
+                                        <If.Then>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="476,619" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="x:String" Default="AllFileCreateReserveFinishProcess\WaitSendEmailTypeSuccess\" Name="PathFileWaitSendEmailTypeSuccess" />
+                                            </Sequence.Variables>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[DateStampFile]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">["_"+DateAndTime.Now.ToString("yyyy_MM_dd hh_mm_ss").ToString]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <ui:SaveImage DisplayName="Save Image" FileName="[PartReserve+PathTakeScreenShot+FilenameTSCResultReserveW1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+FilenameTSCResultReserveW2]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="SaveImage_5" Image="[TSCPNGResultReserve]" />
+                                            <ui:SaveImage DisplayName="Save Image send Email" FileName="[PartReserve+PathFileWaitSendEmailTypeSuccess+FilenameTSCResultReserveW1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+FilenameTSCResultReserveW2]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="SaveImage_6" Image="[TSCPNGResultReserve]" />
+                                            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileWaitSendEmailTypeSuccess+mvfilereserveSP1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+mvfilereserveSP2]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="CopyFile_3" Overwrite="True" Path="[PartReserve+PathFileSPProcessing+FilenameProcessReserveSP]" />
+                                          </Sequence>
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="476,619" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="x:String" Default="AllFileCreateReserveFinishProcess\WaitSendEmailTypeError\" Name="PathFileWaitSendEmailTypeError" />
+                                            </Sequence.Variables>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[DateStampFile]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">["_"+DateAndTime.Now.ToString("yyyy_MM_dd hh_mm_ss").ToString]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <ui:SaveImage DisplayName="Save Image" FileName="[PartReserve+PathTakeScreenShot+FilenameTSCResultReserveW1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+FilenameTSCResultReserveW2]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="SaveImage_7" Image="[TSCPNGResultReserve]" />
+                                            <ui:SaveImage DisplayName="Save Image send Email" FileName="[PartReserve+PathFileWaitSendEmailTypeError+FilenameTSCResultReserveW1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+FilenameTSCResultReserveW2]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="SaveImage_8" Image="[TSCPNGResultReserve]" />
+                                            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileWaitSendEmailTypeError+mvfilereserveSP1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+mvfilereserveSP2]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="CopyFile_4" Overwrite="True" Path="[PartReserve+PathFileSPProcessing+FilenameProcessReserveSP]" />
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                    </Sequence>
+                                  </TryCatch.Try>
+                                  <TryCatch.Catches>
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1043,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ActivityAction x:TypeArguments="s:Exception">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                        </ActivityAction.Argument>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="568,3211" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                          <Sequence.Variables>
+                                            <Variable x:TypeArguments="x:String" Default="D:\UiPathWorkingArea\RTR_RFA\AllFileCreateReserveFinishProcess\Error\" Name="PathFileDataError" />
+                                            <Variable x:TypeArguments="x:String" Default="D:\UiPathWorkingArea\RTR_RFA\AllFileCreateReserveFinishProcess\Error\SendSubmitted\" Name="PathFileDataErrorSendMail" />
+                                          </Sequence.Variables>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="526,61" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[DateStampFile]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["_"+DateAndTime.Now.ToString("yyyy_MM_dd hh_mm_ss").ToString]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <ui:SaveImage DisplayName="Save Image" FileName="[PathTakeScreenShot+FilenameTSCResultReserveW1+DateStampFile.ToString+FilenameTSCResultReserveW2]" sap:VirtualizedContainerService.HintSize="526,92" sap2010:WorkflowViewState.IdRef="SaveImage_9" Image="[TSCPNGResultReserve]" />
+                                          <ui:SaveImage DisplayName="Save Image send Email" FileName="[PathFileDataError+FilenameTSCResultReserveW1+DateStampFile.ToString+FilenameTSCResultReserveW2]" sap:VirtualizedContainerService.HintSize="526,92" sap2010:WorkflowViewState.IdRef="SaveImage_10" Image="[TSCPNGResultReserve]" />
+                                          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[PathFileDataError+mvfilereserveSP1+DateStampFile.ToString+mvfilereserveSP2]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="526,160" sap2010:WorkflowViewState.IdRef="CopyFile_5" Overwrite="True" Path="[PathFileSPProcessing+FilenameProcessReserveSP]" />
+                                          <Assign sap:VirtualizedContainerService.HintSize="526,61" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[ResultTypeReserve]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[StaTypeUploadFailed]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="526,2451" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="x:String" Name="strEmailFrom" />
+                                              <Variable x:TypeArguments="x:String" Name="strEmailPort" />
+                                              <Variable x:TypeArguments="x:String" Name="strEmailServer" />
+                                              <Variable x:TypeArguments="x:Int32" Name="intEmailPort" />
+                                              <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="ListFileAttachSuccess" />
+                                              <Variable x:TypeArguments="x:String" Default="RFA : Data error in uploading JV Create reserve account " Name="SubjectMailError" />
+                                              <Variable x:TypeArguments="x:String" Default="Best Regards,  &#xA;RPA Administrator" Name="ClosingMail" />
+                                              <Variable x:TypeArguments="x:String" Default="Dear Costing &amp; Spare part Team,  &#xA;  &#xA;   RPA Upload_JV Data Error, Please Review Attach File &#xA;   &#xA;   " Name="BodyMailOne" />
+                                              <Variable x:TypeArguments="x:String" Default="Date/time  " Name="BodyMailTwo" />
+                                              <Variable x:TypeArguments="x:String" Name="DateStampFile" />
+                                              <Variable x:TypeArguments="x:String" Name="EmailListReserve" />
+                                              <Variable x:TypeArguments="x:String" Default="EmailListReserve" Name="AssetEmailListReserve" />
+                                              <Variable x:TypeArguments="x:String" Name="ListFile" />
+                                              <Variable x:TypeArguments="x:String" Default="D:\UiPathWorkingArea\RTR_RFA\AllFileCreateReserveFinishProcess\Success\" Name="PathFileFinishSuccess" />
+                                              <Variable x:TypeArguments="s:String[]" Name="ListFileAttachRMSuccess" />
+                                              <Variable x:TypeArguments="s:String[]" Name="ListAllFile" />
+                                              <Variable x:TypeArguments="x:String" Name="PathTypeFailedFileFinish" />
+                                              <Variable x:TypeArguments="x:String" Default="D:\UiPathWorkingArea\RTR_RFA\AllFileCreateReserveFinishProcess\Failed\" Name="PathFileFinishFailed" />
+                                              <Variable x:TypeArguments="s:String[]" Name="ListFileAttachFailed" />
+                                              <Variable x:TypeArguments="x:String" Default="RFA : Failed!!! in uploading JV Create reserve account" Name="SubjectMailFileFailed" />
+                                              <Variable x:TypeArguments="x:String" Default="Dear Costing &amp; Spare part Team,  &#xA;  &#xA;   RPA Upload_JV failed, Please Review Attach File &#xA;   &#xA;   " Name="BodyFileFailedMailOne" />
+                                              <Variable x:TypeArguments="x:String" Default="Date/time  " Name="BodyFileFailedMailTwo" />
+                                              <Variable x:TypeArguments="s:String[]" Name="ListAttachDataError" />
+                                            </Sequence.Variables>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[AssetEmailListReserve]" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="484,139" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+                                              <ui:GetRobotAsset.Value>
+                                                <OutArgument x:TypeArguments="x:String">[EmailListReserve]</OutArgument>
+                                              </ui:GetRobotAsset.Value>
+                                            </ui:GetRobotAsset>
+                                            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="EMAIL_FROM" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="484,139" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
+                                              <ui:GetRobotAsset.Value>
+                                                <OutArgument x:TypeArguments="x:String">[strEmailFrom]</OutArgument>
+                                              </ui:GetRobotAsset.Value>
+                                            </ui:GetRobotAsset>
+                                            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="EMAIL_PORT" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="484,139" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
+                                              <ui:GetRobotAsset.Value>
+                                                <OutArgument x:TypeArguments="x:String">[strEmailPort]</OutArgument>
+                                              </ui:GetRobotAsset.Value>
+                                            </ui:GetRobotAsset>
+                                            <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="EMAIL_SERVER" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="484,139" sap2010:WorkflowViewState.IdRef="GetRobotAsset_5">
+                                              <ui:GetRobotAsset.Value>
+                                                <OutArgument x:TypeArguments="x:String">[strEmailServer]</OutArgument>
+                                              </ui:GetRobotAsset.Value>
+                                            </ui:GetRobotAsset>
+                                            <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Int32">[intEmailPort]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Int32">[Cint(strEmailPort)]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[strEmailFrom]" />
+                                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[strEmailPort]" />
+                                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="[strEmailServer]" />
+                                            <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[DateStampFile]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">[DateAndTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt").ToString]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[BodyMailTwo]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">[BodyMailTwo+DateStampFile+vbCrLf]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="s:String[]">[ListAttachDataError]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(PathFileDataError)]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+                                              <ui:CommentOut.Body>
+                                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="s:String[]">[ListAllFile]</OutArgument>
+                                                    </Assign.To>
+                                                  </Assign>
+                                                </Sequence>
+                                              </ui:CommentOut.Body>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:CommentOut>
+                                            <If Condition="[Directory.GetFiles(PathFileDataError).Length = 0]" DisplayName="SendEmailReserveSuccess" sap:VirtualizedContainerService.HintSize="484,308" sap2010:WorkflowViewState.IdRef="If_4">
+                                              <If.Else>
+                                                <ui:SendMail Bcc="{x:Null}" Email="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" AttachmentsCollection="[ListAttachDataError]" Body="[BodyMailOne+BodyMailTwo+ClosingMail]" Cc="Supakorn.s@baraadv.co.th" DisplayName="Send SMTP Mail Message" EnableSSL="True" From="[strEmailFrom]" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Port="[intEmailPort]" SecureConnection="None" Server="[strEmailServer]" Subject="[SubjectMailError]" To="[EmailListReserve]">
+                                                  <ui:SendMail.Files>
+                                                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                                  </ui:SendMail.Files>
+                                                </ui:SendMail>
+                                              </If.Else>
+                                            </If>
+                                            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="MoveFileReserveSuccess" sap:VirtualizedContainerService.HintSize="484,390" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ListAttachDataError]">
+                                              <ui:ForEach.Body>
+                                                <ActivityAction x:TypeArguments="x:Object">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="x:Object" Name="file_move" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="426,254" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                                    <Sequence.Variables>
+                                                      <Variable x:TypeArguments="x:String" Default="D:\UiPathWorkingArea\RTR_RFA\AllFileCreateReserveFinishProcess\Success\SendSubmitted\" Name="PathFileSendSuccess" />
+                                                    </Sequence.Variables>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PathFileDataErrorSendMail+Path.GetFilename(file_move.ToString).ToString]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_6" Overwrite="True" Path="[file_move.ToString]" />
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </ui:ForEach.Body>
+                                            </ui:ForEach>
+                                            <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="s:String[]">[ListFileAttachFailed]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(PathFileFinishFailed)]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </Catch>
+                                  </TryCatch.Catches>
+                                </TryCatch>
+                                <If Condition="[ResultTypeReserve = StaTypeUploadSuccess]" sap:VirtualizedContainerService.HintSize="1284,576" sap2010:WorkflowViewState.IdRef="If_6">
+                                  <If.Then>
+                                    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileSPSuccess+mvfilereserveSP1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+mvfilereserveSP2]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_7" Overwrite="True" Path="[PartReserve+PathFileSPProcessing+FilenameProcessReserveSP]" />
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="855,415" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="x:String" Default="CreateReserveFile\SP\Failed\" Name="PathFileSPFailed" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <If Condition="[ResultTypeReserve = StaTypeUploadError]" sap:VirtualizedContainerService.HintSize="813,321" sap2010:WorkflowViewState.IdRef="If_5">
+                                        <If.Then>
+                                          <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileSPError+mvfilereserveSP1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+mvfilereserveSP2]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_8" Overwrite="True" Path="[PartReserve+PathFileSPProcessing+FilenameProcessReserveSP]" />
+                                        </If.Then>
+                                        <If.Else>
+                                          <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileSPFailed+mvfilereserveSP1+ResultDocrunning.ToString.Replace(&quot; &quot;, [String].Empty)+DateStampFile.ToString+mvfilereserveSP2]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_9" Overwrite="True" Path="[PartReserve+PathFileSPProcessing+FilenameProcessReserveSP]" />
+                                        </If.Else>
+                                      </If>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke UPDATESTAT1 workflow" sap:VirtualizedContainerService.HintSize="1284,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="UPDATESTAT1.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="argStatusReserve">[ResultTypeReserve]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="argDoNoRFA">[ResultDocrunning]</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'OkCodeField  okcd'" sap:VirtualizedContainerService.HintSize="1284,134" sap2010:WorkflowViewState.IdRef="TypeInto_10" Text="/n[k(enter)]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c99645b8-4112-430d-827a-1a3704704db3" InformativeScreenshot="43324a4c17dc2acf88caf275db473ec7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Modify Upload Program for Mass Journals' /&gt;&lt;sap id='tbar[0]/okcd' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                </ui:TypeInto>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEach.Body>
+                        </ui:ForEach>
+                      </Sequence>
+                    </Sequence>
+                  </ActivityAction>
+                </uix:NApplicationCard.Body>
+                <uix:NApplicationCard.TargetApp>
+                  <uix:TargetApp Area="-9, -9, 1938, 1048" ContentHash="E0_PnI88lUu2gt6Qi_lW-Q" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="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" InformativeScreenshot="f44315cd9fad8a8b6adadf91debcaa00.png" Reference="2c9g1jtw40q-sGERqflyVQ/eVIeq6bxYk2kkL5IZGNRPA" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access'/&gt;" />
+                </uix:NApplicationCard.TargetApp>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NApplicationCard>
+            </Sequence>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>

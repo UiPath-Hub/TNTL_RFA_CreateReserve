@@ -1,0 +1,260 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="EMAILINITFAILED" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="INITCASE" Type="InArgument(x:String)" />
+    <x:Property Name="FileTemplateName" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>759,3344</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>EMAILINITFAILED_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>UiPath.Word.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="INITFAIELD" sap:VirtualizedContainerService.HintSize="594,3179" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="answer" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="retry" />
+      <Variable x:TypeArguments="x:String" Default="EmailListReserve" Name="AssetEmailListReserve" />
+      <Variable x:TypeArguments="x:String" Default="PathJVTPL" Name="AssetPathJVTPL" />
+      <Variable x:TypeArguments="x:String" Name="EmailListReserve" />
+      <Variable x:TypeArguments="ui:Image" Name="Screenshot" />
+      <Variable x:TypeArguments="x:String" Default="D:\UiPathWorkingArea\RTR_RFA\CreateReserveFile\TaskScreenshot\TaskScreenshot.png" Name="PathFileTaskScreenshot" />
+      <Variable x:TypeArguments="x:String" Default="Supakorn.s@baraadv.co.th" Name="EmailusersendGlobal" />
+      <Variable x:TypeArguments="x:String" Name="EmailpasssendGlobal" />
+      <Variable x:TypeArguments="x:String" Name="strEmailFrom" />
+      <Variable x:TypeArguments="x:String" Name="strEmailPort" />
+      <Variable x:TypeArguments="x:String" Name="strEmailServer" />
+      <Variable x:TypeArguments="x:Int32" Name="intEmailPort" />
+      <Variable x:TypeArguments="x:String" Name="DateTimeStampEmail" />
+      <Variable x:TypeArguments="x:String" Default="Screenshot" Name="FileNameScreenshotOne" />
+      <Variable x:TypeArguments="x:String" Default=".png" Name="FileNameScreenshotTwo" />
+      <Variable x:TypeArguments="x:Boolean" Name="CheckINIT" />
+      <Variable x:TypeArguments="x:String" Name="strEmailBody" />
+      <Variable x:TypeArguments="x:String" Default="PathJVTPL" Name="AssetPartTemplate" />
+      <Variable x:TypeArguments="x:String" Name="ValueAssetPartTemplate" />
+      <Variable x:TypeArguments="x:String" Name="PathProcesTPL" />
+      <Variable x:TypeArguments="x:String" Name="PartTPL" />
+      <Variable x:TypeArguments="x:String" Name="PathFileWaitSendMailTypeSuccess" />
+      <Variable x:TypeArguments="x:String" Name="PathFileTPL" />
+      <Variable x:TypeArguments="x:String" Default="SubjectMailCreateReserveInitFail" Name="AssetSubJectMailINITFail" />
+      <Variable x:TypeArguments="x:String" Name="ValueAssetSubJectMailINITFail" />
+      <Variable x:TypeArguments="x:String" Default="ProductionModern" Name="FolderProductionModern" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[AssetPartTemplate]" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="552,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_6">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[ValueAssetPartTemplate]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[AssetSubJectMailINITFail]" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="552,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_7">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[ValueAssetSubJectMailINITFail]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <Assign sap:VirtualizedContainerService.HintSize="552,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[PartTPL]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[ValueAssetPartTemplate+"TemplateCreateReserve\"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[AssetEmailListReserve]" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="552,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[EmailListReserve]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="EMAIL_FROM" DisplayName="Get Asset" FolderPath="[FolderProductionModern]" sap:VirtualizedContainerService.HintSize="552,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[strEmailFrom]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="EMAIL_PORT" DisplayName="Get Asset" FolderPath="[FolderProductionModern]" sap:VirtualizedContainerService.HintSize="552,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[strEmailPort]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="EMAIL_SERVER" DisplayName="Get Asset" FolderPath="[FolderProductionModern]" sap:VirtualizedContainerService.HintSize="552,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[strEmailServer]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <Assign sap:VirtualizedContainerService.HintSize="552,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[intEmailPort]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[Cint(strEmailPort)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="552,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[DateTimeStampEmail]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[DateAndTime.Now.ToString("dd/MM/yyyy hh:mm:ss").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="552,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[PathFileTaskScreenshot]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Sequence sap:VirtualizedContainerService.HintSize="552,1594" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Default="RFA : Failed!!! initialization of creating reserve account" Name="SubjectINITFailedOne" />
+        <Variable x:TypeArguments="x:String" Default="TPLEmailInitialization.docx" Name="TPLEmailI" />
+        <Variable x:TypeArguments="x:String" Default="TPLEmailInitializationTemp.docx" Name="TPLEmailTemp" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot" sap:VirtualizedContainerService.HintSize="510,68" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[Screenshot]">
+        <ui:TakeScreenshot.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7c9c4a28-3c1f-4618-b3b9-23f88d3383e2">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:TakeScreenshot.Target>
+      </ui:TakeScreenshot>
+      <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[PathFileTaskScreenshot]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[ValueAssetPartTemplate+"CreateReserveFile\TaskScreenshot\TaskScreenshot.png"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:SaveImage DisplayName="Save Image" FileName="[PathFileTaskScreenshot]" sap:VirtualizedContainerService.HintSize="510,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Screenshot]" />
+      <ui:CopyFile ContinueOnError="{x:Null}" Destination="[PartTPL+TPLEmailTemp]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[PartTPL+TPLEmailI]" />
+      <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[PartTPL+TPLEmailTemp]" sap:VirtualizedContainerService.HintSize="510,780" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+        <p:WordApplicationScope.Body>
+          <ActivityAction x:TypeArguments="ui:WordDocument">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,671" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[INITCASE]" ReplaceAll="True" Search="{}{$Errorcase}" />
+              <If Condition="[INITCASE = &quot;SAP LOGIN FAILED&quot;]" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="If_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Replace="Please check username and password SAP." ReplaceAll="True" Search="{}{$ErrorDetails}" />
+                </If.Then>
+                <If.Else>
+                  <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="WordReplaceText_4" Replace="[&quot;Please check template file path :: [&quot;+PartTPL+FileTemplateName+&quot;]&quot;]" ReplaceAll="True" Search="{}{$ErrorDetails}" />
+                </If.Else>
+              </If>
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[Date.now.ToString]" ReplaceAll="True" Search="{}{$ErrorDate}" />
+              <p:WordReadText DisplayName="Read Text" sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="WordReadText_1" Text="[strEmailBody]" />
+            </Sequence>
+          </ActivityAction>
+        </p:WordApplicationScope.Body>
+      </p:WordApplicationScope>
+      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" Email="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[strEmailBody]" DisplayName="Send SMTP Mail Message" EnableSSL="True" From="[strEmailFrom]" sap:VirtualizedContainerService.HintSize="510,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Port="[intEmailPort]" SecureConnection="None" Server="[strEmailServer]" Subject="[ValueAssetSubJectMailINITFail]" To="[EmailListReserve]">
+        <ui:SendMail.Files>
+          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+            <InArgument x:TypeArguments="x:String">[PathFileTaskScreenshot]</InArgument>
+          </scg:List>
+        </ui:SendMail.Files>
+      </ui:SendMail>
+    </Sequence>
+  </Sequence>
+</Activity>

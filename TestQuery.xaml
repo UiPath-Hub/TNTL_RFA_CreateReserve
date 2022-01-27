@@ -1,0 +1,863 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TestQuery" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="864,10908" sap2010:WorkflowViewState.IdRef="TestQuery_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="EXCEL1" sap:VirtualizedContainerService.HintSize="874,10663" sap2010:WorkflowViewState.IdRef="Sequence_18">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="OutPutDaTable" />
+      <Variable x:TypeArguments="x:String" Name="OPdatable" />
+      <Variable x:TypeArguments="ui:WorkbookApplication" Name="WBoutput" />
+      <Variable x:TypeArguments="x:String" Name="StrConSQL" />
+      <Variable x:TypeArguments="ui:DatabaseConnection" Name="OutputConSQL" />
+      <Variable x:TypeArguments="x:String" Default="SELECT [ReserveNo]&#xA;     ,convert(varchar, [FinanceApproveDate], 104)&#xA;     ,convert(varchar, [FinanceApproveDate], 104)&#xA;      ,'SA'&#xA;&#x9;  ,[CompanyCode]&#xA;&#x9;  ,'THB'&#xA;&#x9;  ,''&#xA;&#x9;  ,[DocumentNumber]&#xA;&#x9;  ,'ตั้ง Reserve RFA'&#xA;&#x9;  ,IIF([MaterialNumber] IS NULL,'50','40') AS 'postingkey'&#xA;      ,IIF([MaterialNumber] IS NULL,IIF(MaterialType = 'ZROH' OR MaterialType = 'ZVER' OR MaterialType = 'ZHAL' ,'120100200','120609200'),IIF([MaterialType] = 'ZROH' OR MaterialType = 'ZVER' OR MaterialType = 'ZHAL' ,'880201241','880201251'))&#xA;&#x9;  ,''&#xA;&#x9;  ,IIF([MaterialNumber] IS NULL ,'',[ChargeTo])&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,IIF([MaterialNumber] IS NULL,IIF(MaterialType = 'ZROH' OR MaterialType = 'ZVER' OR MaterialType = 'ZHAL' ,'Reserve RM','Reserve SP'),IIF([MaterialType] = 'ZROH' OR MaterialType = 'ZVER' OR MaterialType = 'ZHAL' ,'Inv Destroyed-RM','Inv Destroyed-SP'))&#xA;      ,[DocumentNumber]&#xA;&#x9;  ,[InventoryAmount]&#xA;&#x9;  ,''&#xA;&#x9;  ,convert(varchar, [FinanceApproveDate], 104)&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,IIF([MaterialNumber] IS NULL,NULL,[InventoryQuantity])&#xA;&#x9;  ,IIF([MaterialNumber] IS NULL,'',[UOM])&#xA;&#x9;  ,MONTH(FinanceApproveDate)&#xA;&#x9;  ,IIF([MaterialNumber] IS NULL,'',[MaterialNumber])&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,IIF([MaterialNumber] IS NULL,'',[Plant])&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;  FROM [RFA].[dbo].[ReserveData]&#xA;  WHERE DocumentNumber = '" Name="QueryCRRM" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ResultQuertCRRM" />
+      <Variable x:TypeArguments="x:String" Default="SELECT DISTINCT [DocumentNumber]&#xA;FROM [RFA].[dbo].[ReserveData]&#xA;WHERE MaterialType IN ('ZROH','ZVER','ZHAL') and [ReserveNo] IS NULL and [TypeOfReserve] = 'PEN' and StatusReserve = 'P'&#xA;ORDER BY DocumentNumber" Name="QueryRFANoInsertDocNoRM" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ArrayRFANo" />
+      <Variable x:TypeArguments="x:String" Name="StrRFANo" />
+      <Variable x:TypeArguments="s:String[]" Name="ArrayDocRFANo" />
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="PositionDocStart" />
+      <Variable x:TypeArguments="x:String" Name="QueryCRRM2" />
+      <Variable x:TypeArguments="x:String" Default="SELECT MAX(ReserveNo)&#xA;  FROM [dbo].[ReserveData]" Name="QueryMaxDocrunning" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ResultDocrunning" />
+      <Variable x:TypeArguments="x:String" Name="ResultStrDocruning" />
+      <Variable x:TypeArguments="s:String[]" Name="SetDataAssetDoc" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DataOfDocRFANo" />
+      <Variable x:TypeArguments="s:String[]" Name="Arraystr_docrunning" />
+      <Variable x:TypeArguments="x:Int32" Name="Int_docrunning" />
+      <Variable x:TypeArguments="x:String" Default="RPASystem" Name="UpdateSQLModifyBy" />
+      <Variable x:TypeArguments="x:String" Name="FileNameReserve" />
+      <Variable x:TypeArguments="x:String" Default="JV Reserve" Name="SheetName" />
+      <Variable x:TypeArguments="x:String" Default="Accounting Approved" Name="StatusAccountingApprove" />
+      <Variable x:TypeArguments="x:String" Default="SELECT DISTINCT [DocumentNumber]&#xA;  FROM [RFA].[dbo].[ReserveData]&#xA;  WHERE StatusReserve = 'P' and TypeOfReserve = 'PEN'" Name="QueryRFAPending" />
+      <Variable x:TypeArguments="x:Int32" Name="PositionDocPendingStart" />
+      <Variable x:TypeArguments="x:String" Name="StrRFAPendingNo" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ArrayRFAPendingNo" />
+      <Variable x:TypeArguments="s:String[]" Name="ArrayDocRFANoDocNull" />
+      <Variable x:TypeArguments="x:String" Name="PartTPL" />
+      <Variable x:TypeArguments="x:String" Default="PathJVTPL" Name="AssetPathTPL" />
+      <Variable x:TypeArguments="x:String" Name="ValuePathTPL" />
+      <Variable x:TypeArguments="x:String" Default="PathJVTPL" Name="AssetPartTemplate" />
+      <Variable x:TypeArguments="x:String" Name="ValueAssetPartTemplate" />
+      <Variable x:TypeArguments="x:String" Name="PartReserve" />
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;ZROH&quot;,&quot;ZVER&quot;,&quot;ZHAL&quot;}]" Name="MaterialTypeRM" />
+      <Variable x:TypeArguments="x:String" Name="OPCRExportExcel" />
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;ZERN&quot;,&quot;ZAM&quot;,&quot;ZNVM&quot;}]" Name="MaterialTypeSP" />
+      <Variable x:TypeArguments="x:String" Default="CreateReserve\JV ตั้ง Reserve Spare Part Template.xlsx" Name="PathFileResultReSP" />
+      <Variable x:TypeArguments="x:String" Default="SELECT TOP (1) [MaterialType]&#xA;  FROM [RFA].[dbo].[ReserveData]&#xA;  WHERE DocumentNumber = '" Name="QueryTypeRMorSP" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DTMaterialType" />
+      <Variable x:TypeArguments="x:String" Name="DTstrMaterialType" />
+      <Variable x:TypeArguments="x:String" Default="RM" Name="strRM" />
+      <Variable x:TypeArguments="x:String" Default="SP" Name="strSP" />
+      <Variable x:TypeArguments="x:String" Name="StatusTypeMeaterialType" />
+      <Variable x:TypeArguments="x:String" Default="SELECT MAX(ReserveNo)&#xA;FROM [RFA].[dbo].[ReserveData]&#xA;WHERE [CreateDateTime] = CONVERT (date, SYSDATETIME()) and MaterialType IN ('ZROH','ZVER','ZHAL')" Name="SelectMaxDocRunningTodayRM" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DTMaxDocrunningToday" />
+      <Variable x:TypeArguments="x:String" Name="strDocrunningToday" />
+      <Variable x:TypeArguments="s:String[]" Name="ArrayDocRunningToday" />
+      <Variable x:TypeArguments="x:Int32" Name="intDocRunningMaxToDay" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ArrayRFANoRMInsertDocRunning" />
+      <Variable x:TypeArguments="x:String" Default="UPDATE [RFA].[dbo].[ReserveData] SET ReserveNo = '" Name="UpdateDocRunningByRFANoOne" />
+      <Variable x:TypeArguments="x:String" Default="' ,ModifyDateTime = GETDATE() Where DocumentNumber = '" Name="UpdateDocRunningByRFANoTwo" />
+      <Variable x:TypeArguments="x:String" Default="SELECT DISTINCT [DocumentNumber]&#xA;FROM [RFA].[dbo].[ReserveData]&#xA;WHERE MaterialType IN ('ZERN','ZAM','ZNVM') and [ReserveNo] IS NULL and [TypeOfReserve] = 'PEN' and StatusReserve = 'P'&#xA;ORDER BY DocumentNumber" Name="QueryRFANoInsertDocNoSP" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ArrayRFANoSPInsertDocRunning" />
+      <Variable x:TypeArguments="x:String" Default="' and StatusReserve = 'P' and TypeOfReserve = 'PEN'" Name="QueryLastCRRM" />
+      <Variable x:TypeArguments="x:String" Default="JV ตั้ง Reserve RM Template.xlsx" Name="FileTPLRM" />
+      <Variable x:TypeArguments="x:String" Default="Processing\RM\JV ตั้ง Reserve RM Template.xlsx" Name="PathFileProcessingRM" />
+      <Variable x:TypeArguments="x:String" Name="FileNameRMCreate" />
+      <Variable x:TypeArguments="x:String" Name="FileNameSPCreate" />
+      <Variable x:TypeArguments="x:String" Default="CreateReserveFile\RM\Process\" Name="PathFileReserveRM" />
+      <Variable x:TypeArguments="x:String" Default="CreateReserveFile\SP\Process\" Name="PathFileReserveSP" />
+      <Variable x:TypeArguments="x:String" Default="JV ตั้ง Reserve RM_" Name="FilenameReserveRM_1" />
+      <Variable x:TypeArguments="x:String" Default=".xlsx" Name="FilenameReserveRM_2" />
+      <Variable x:TypeArguments="x:String" Default="JV ตั้ง Reserve Spare Part_" Name="FilenameReserveSP_1" />
+      <Variable x:TypeArguments="x:String" Default=".xlsx" Name="FilenameReserveSP_2" />
+      <Variable x:TypeArguments="x:String" Default="SELECT TOP(1) [ReserveNo]&#xA;     ,convert(varchar, [FinanceApproveDate], 104)&#xA;     ,convert(varchar, [FinanceApproveDate], 104)&#xA;      ,'SA'&#xA;&#x9;  ,[CompanyCode]&#xA;&#x9;  ,'THB'&#xA;&#x9;  ,''&#xA;&#x9;  ,[DocumentNumber]&#xA;&#x9;  ,'ตั้ง Reserve RFA'&#xA;&#x9;  ,'50'&#xA;      ,IIF(MaterialType = 'ZROH' OR MaterialType = 'ZVER' OR MaterialType = 'ZHAL' ,'120100200','120609200')&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,IIF(MaterialType = 'ZROH' OR MaterialType = 'ZVER' OR MaterialType = 'ZHAL' ,'Reserve RM','Reserve SP')&#xA;      ,[DocumentNumber]&#xA;&#x9;  ,'AddSum'&#xA;&#x9;  ,''&#xA;&#x9;  ,convert(varchar, [FinanceApproveDate], 104)&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,MONTH(FinanceApproveDate)&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;&#x9;  ,''&#xA;  FROM [RFA].[dbo].[ReserveData]&#xA;  WHERE DocumentNumber = '" Name="QueryCRRMLastLine" />
+      <Variable x:TypeArguments="x:String" Name="AddRowLastJV" />
+      <Variable x:TypeArguments="x:String" Default="SELECT TOP(1) SUM(try_convert(numeric(38, 2), InventoryAmount))&#xA;  FROM [RFA].[dbo].[ReserveData]&#xA;  WHERE StatusReserve = 'P' and TypeOfReserve = 'PEN' and DocumentNumber = '" Name="QueryCRRMSum" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DataOfDocLastSum" />
+      <Variable x:TypeArguments="x:String" Name="ArrayLastDocSum" />
+      <Variable x:TypeArguments="s:String[]" Name="SumLastLine" />
+      <Variable x:TypeArguments="x:String" Name="QueryLastLineTypeRMorSPTwo" />
+      <Variable x:TypeArguments="x:String" Default="SELECT [ReserveNo]&#xA;  FROM [RFA].[dbo].[ReserveData]&#xA;  WHERE DocumentNumber = '" Name="QueryDocRunning" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DataOfDocLastLineRFANo" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DataOfDucRunning" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ArrayRFANoRMInsertData" />
+      <Variable x:TypeArguments="x:String" Default="SELECT DISTINCT [DocumentNumber]&#xA;FROM [RFA].[dbo].[ReserveData]&#xA;WHERE MaterialType IN ('ZROH','ZVER','ZHAL') and [TypeOfReserve] = 'PEN' and StatusReserve = 'P'&#xA;ORDER BY DocumentNumber" Name="QueryRFANoInsertDataRM" />
+      <Variable x:TypeArguments="x:String" Default="JV ตั้ง Reserve Spare Part Template.xlsx" Name="FileTPLSP" />
+      <Variable x:TypeArguments="x:String" Default="Processing\SP\JV ตั้ง Reserve Spare Part Template.xlsx" Name="PathFileProcessingSP" />
+      <Variable x:TypeArguments="x:String" Default="SELECT DISTINCT [DocumentNumber]&#xA;FROM [RFA].[dbo].[ReserveData]&#xA;WHERE MaterialType IN ('ZERN','ZAM','ZNVM') and [TypeOfReserve] = 'PEN' and StatusReserve = 'P'&#xA;ORDER BY DocumentNumber" Name="QueryRFANoInsertDataSP" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ArrayRFANoSPInsertData" />
+      <Variable x:TypeArguments="x:String" Default="JV ตั้ง Reserve RM.xlsx" Name="FilenameReserveRM" />
+      <Variable x:TypeArguments="x:String" Default="JV ตั้ง Reserve Spare Part.xlsx" Name="FilenameReserveSP" />
+      <Variable x:TypeArguments="x:Boolean" Name="ExitsFileReserveSP" />
+      <Variable x:TypeArguments="x:Boolean" Name="ExitsFileReserveRM" />
+      <Variable x:TypeArguments="x:String" Default="SELECT MAX(ReserveNo)&#xA;FROM [RFA].[dbo].[ReserveData]&#xA;WHERE [CreateDateTime] = CONVERT (date, SYSDATETIME()) and MaterialType IN ('ZERN','ZAM','ZNVM')" Name="SelectMaxDocRunningTodaySP" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DTMaxDocrunningTodaySP" />
+      <Variable x:TypeArguments="x:String" Name="strDocrunningTodaySP" />
+      <Variable x:TypeArguments="s:String[]" Name="ArrayDocRunningTodaySP" />
+      <Variable x:TypeArguments="x:String" Default="strConSQL" Name="AssetStrConSQL" />
+      <Variable x:TypeArguments="x:String" Name="SubFolderGlobal" />
+      <Variable x:TypeArguments="x:String" Default="strSubFolderGlobal" Name="AssetSubFolderGlobal" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[AssetPartTemplate]" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="832,139" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[ValueAssetPartTemplate]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[AssetSubFolderGlobal]" DisplayName="Get Asset" FolderPath="ProductionModern" sap:VirtualizedContainerService.HintSize="832,139" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[SubFolderGlobal]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotCredential Password="{x:Null}" TimeoutMS="{x:Null}" AssetName="[AssetStrConSQL]" DisplayName="Get Credential" FolderPath="[SubFolderGlobal]" sap:VirtualizedContainerService.HintSize="832,80" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Username="[StrConSQL]" />
+    <Assign sap:VirtualizedContainerService.HintSize="832,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[PartReserve]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[ValueAssetPartTemplate]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="832,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[PartTPL]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[PartReserve+"TemplateCreateReserve\"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:DatabaseConnect DatabaseConnection="[OutputConSQL]" DisplayName="Connect DB" sap:VirtualizedContainerService.HintSize="832,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="[StrConSQL]" />
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DTMaxDocrunningToday]" DisplayName="SelectDocRunningToDay" sap:VirtualizedContainerService.HintSize="832,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" ProviderName="System.Data.SqlClient" Sql="[SelectMaxDocRunningTodayRM]" ConnectionString="[StrConSQL]">
+      <ui:ExecuteQuery.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:ExecuteQuery.Parameters>
+    </ui:ExecuteQuery>
+    <ui:OutputDataTable DataTable="[DTMaxDocrunningToday]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="832,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strDocrunningToday]" />
+    <Assign sap:VirtualizedContainerService.HintSize="832,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[ArrayDocRunningToday]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[Split(strDocrunningToday,vbCrLf)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[ArrayDocRunningToday(1).ToString = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="832,220" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Int32">[intDocRunningMaxToDay]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Int32">1</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Then>
+      <If.Else>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Int32">[intDocRunningMaxToDay]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Int32">[CInt(ArrayDocRunningToday(1).ToString)]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Else>
+    </If>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="832,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Max Doc Running Today is &quot;+intDocRunningMaxToDay.ToString]" />
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[ArrayRFANoRMInsertDocRunning]" DisplayName="QueryRFANoInsertDocNoRM" sap:VirtualizedContainerService.HintSize="832,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" ProviderName="System.Data.SqlClient" Sql="[QueryRFANoInsertDocNoRM]" ConnectionString="[StrConSQL]">
+      <ui:ExecuteQuery.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:ExecuteQuery.Parameters>
+    </ui:ExecuteQuery>
+    <Assign sap:VirtualizedContainerService.HintSize="832,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[FileTPLRM]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["JV ตั้ง Reserve RM Template.xlsx"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="832,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[FileTPLRM]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[PartTPL+FileTPLRM]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="832,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[FileNameReserveRM]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[PartTPL+PathFileProcessingRM]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ArrayRFANoRMInsertDocRunning]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="832,775" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="ItemRFANoRM" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="478,654" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Name="DTResultUpdateDocRM" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,62" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;RFA No RM : &quot;+ItemRFANoRM(0).ToString]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,62" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;Query Update Docrunning : &quot;+UpdateDocRunningByRFANoOne+intDocRunningMaxToDay.ToString+UpdateDocRunningByRFANoTwo+ItemRFANoRM(0).ToString+&quot;'&quot;]" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,258" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DTResultUpdateDocRM]" DisplayName="SelectDocRunningToDay" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_3" ProviderName="System.Data.SqlClient" Sql="[UpdateDocRunningByRFANoOne+intDocRunningMaxToDay.ToString+UpdateDocRunningByRFANoTwo+ItemRFANoRM(0).ToString+&quot;'&quot;]" ConnectionString="[StrConSQL]">
+                    <ui:ExecuteQuery.Parameters>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:ExecuteQuery.Parameters>
+                  </ui:ExecuteQuery>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[intDocRunningMaxToDay]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[intDocRunningMaxToDay + 1]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[ArrayRFANoRMInsertData]" DisplayName="QueryRFANoInsertDocNoRM" sap:VirtualizedContainerService.HintSize="832,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_4" ProviderName="System.Data.SqlClient" Sql="[QueryRFANoInsertDataRM]" ConnectionString="[StrConSQL]">
+      <ui:ExecuteQuery.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:ExecuteQuery.Parameters>
+    </ui:ExecuteQuery>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="832,62" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Count : &quot;+ArrayRFANoRMInsertData.Rows.Count.ToString]" />
+    <If Condition="[ArrayRFANoRMInsertData.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="832,1236" sap2010:WorkflowViewState.IdRef="If_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="526,1056" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Default="JV ตั้ง Reserve RM.xlsx" Name="FilenameReserveRMOnsap" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[FileNameReserveRM]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="484,160" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[FileTPLRM]" />
+          <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[FileNameReserveRM]">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="720,3177" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ArrayRFANoRMInsertData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="678,3085" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="ItemRFANoRM" />
+                        </ActivityAction.Argument>
+                        <Sequence sap:VirtualizedContainerService.HintSize="644,2965" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="602,62" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;RFA No : &quot;+ItemRFANoRM(0).ToString]" />
+                          <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DataOfDocRFANo]" DisplayName="Execute Query" sap:VirtualizedContainerService.HintSize="602,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_5" ProviderName="System.Data.SqlClient" Sql="[QueryCRRM+ItemRFANoRM(0).ToString+QueryLastCRRM]" ConnectionString="[StrConSQL]">
+                            <ui:ExecuteQuery.Parameters>
+                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                            </ui:ExecuteQuery.Parameters>
+                          </ui:ExecuteQuery>
+                          <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DataOfDocLastLineRFANo]" DisplayName="Query Last Line" sap:VirtualizedContainerService.HintSize="602,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_6" ProviderName="System.Data.SqlClient" Sql="[QueryCRRMLastLine+ItemRFANoRM(0).ToString+&quot;'&quot;]" ConnectionString="[StrConSQL]">
+                            <ui:ExecuteQuery.Parameters>
+                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                            </ui:ExecuteQuery.Parameters>
+                          </ui:ExecuteQuery>
+                          <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DataOfDocLastSum]" DisplayName="Query Last Line" sap:VirtualizedContainerService.HintSize="602,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_7" ProviderName="System.Data.SqlClient" Sql="[QueryCRRMSum+ItemRFANoRM(0).ToString+&quot;'&quot;]" ConnectionString="[StrConSQL]">
+                            <ui:ExecuteQuery.Parameters>
+                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                            </ui:ExecuteQuery.Parameters>
+                          </ui:ExecuteQuery>
+                          <ui:OutputDataTable DataTable="[DataOfDocLastSum]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="602,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[ArrayLastDocSum]" />
+                          <Assign sap:VirtualizedContainerService.HintSize="602,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="s:String[]">[SumLastLine]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="s:String[]">[Split(ArrayLastDocSum,vbCrLf)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="602,2224" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="sd:DataTable" Name="OTdataSheet" />
+                              <Variable x:TypeArguments="x:Int32" Name="RowExcel" />
+                              <Variable x:TypeArguments="sd:DataTable" Name="DTLastRowOnExcel" />
+                              <Variable x:TypeArguments="x:String" Name="ST_InsertByOrderRow" />
+                              <Variable x:TypeArguments="sd:DataTable" Name="DTLastRowOfInsertData" />
+                              <Variable x:TypeArguments="x:String" Name="ET_InsertByOrderRow" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="560,62" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="open excel" />
+                            <ui:ExcelReadRange AddHeaders="True" DataTable="[DTLastRowOnExcel]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="560,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" Range="A1" SheetName="[SheetName]" />
+                            <Assign sap:VirtualizedContainerService.HintSize="560,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[ST_InsertByOrderRow]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[(DTLastRowOnExcel.Rows.Count+2).ToString]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="560,62" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[&quot;Start row insert : &quot;+ST_InsertByOrderRow]" />
+                            <ui:ExcelWriteRange AddHeaders="False" DataTable="[DataOfDocRFANo]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="560,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="[SheetName]" StartingCell="[&quot;A&quot;+ST_InsertByOrderRow]" />
+                            <ui:ExcelReadRange AddHeaders="True" DataTable="[DTLastRowOfInsertData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="560,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" Range="A1" SheetName="[SheetName]" />
+                            <Assign sap:VirtualizedContainerService.HintSize="560,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[AddRowLastJV]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">["A"+(2+DTLastRowOfInsertData.Rows.Count).ToString]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="560,62" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[&quot;AddRowLastJV :&quot;+AddRowLastJV]" />
+                            <ui:ExcelWriteRange AddHeaders="False" DataTable="[DataOfDocLastLineRFANo]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="560,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="[SheetName]" StartingCell="[AddRowLastJV]" />
+                            <ui:ExcelReadRange AddHeaders="False" DataTable="[OTdataSheet]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="560,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" SheetName="[SheetName]">
+                              <ui:ExcelReadRange.Range>
+                                <InArgument x:TypeArguments="x:String">
+                                  <Literal x:TypeArguments="x:String" Value="" />
+                                </InArgument>
+                              </ui:ExcelReadRange.Range>
+                            </ui:ExcelReadRange>
+                            <Assign sap:VirtualizedContainerService.HintSize="560,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[RowExcel]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">[Cint(ST_InsertByOrderRow)]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[OTdataSheet]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,976" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                              <ui:ForEachRow.Body>
+                                <ActivityAction x:TypeArguments="sd:DataRow">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,856" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If Condition="[RowExcel &lt;= 2+DTLastRowOfInsertData.Rows.Count]" sap:VirtualizedContainerService.HintSize="484,358" sap2010:WorkflowViewState.IdRef="If_2">
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                          <Sequence.Variables>
+                                            <Variable x:TypeArguments="x:Object" Default="[&quot;ตั้ง Reserve RFA&quot;]" Name="ObjectCreateReserve" />
+                                          </Sequence.Variables>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:ExcelWriteCell Cell="[&quot;I&quot;+RowExcel.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="[SheetName]" Text="ตั้ง Reserve RFA" />
+                                        </Sequence>
+                                      </If.Then>
+                                    </If>
+                                    <If Condition="[RowExcel = OTdataSheet.Rows.Count]" sap:VirtualizedContainerService.HintSize="484,266" sap2010:WorkflowViewState.IdRef="If_3">
+                                      <If.Then>
+                                        <ui:ExcelWriteCell Cell="[&quot;S&quot;+RowExcel.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="[SheetName]" Text="[SumLastLine(1)]" />
+                                      </If.Then>
+                                    </If>
+                                    <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">[RowExcel]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">[RowExcel+1]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:ForEachRow.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:ForEachRow>
+                          </Sequence>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ForEachRow>
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ExcelApplicationScope>
+          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[PartReserve]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[ValueAssetPartTemplate]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:PathExists DisplayName="Path Exists" Exists="[ExitsFileReserveRM]" sap:VirtualizedContainerService.HintSize="484,90" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[FileNameReserveRM]" PathType="File" />
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[&quot;Part FilenameReserveRM : &quot;+PartReserve+PathFileReserveRM+FilenameReserveRMOnsap]" />
+          <If Condition="[ExitsFileReserveRM]" sap:VirtualizedContainerService.HintSize="484,340" sap2010:WorkflowViewState.IdRef="If_4">
+            <If.Then>
+              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileReserveRM+FilenameReserveRMOnsap]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[FileNameReserveRM]" />
+            </If.Then>
+          </If>
+        </Sequence>
+      </If.Then>
+    </If>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="832,62" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="Start SP" />
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DTMaxDocrunningTodaySP]" DisplayName="SelectDocRunningToDay" sap:VirtualizedContainerService.HintSize="832,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_8" ProviderName="System.Data.SqlClient" Sql="[SelectMaxDocRunningTodaySP]" ConnectionString="[StrConSQL]">
+      <ui:ExecuteQuery.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:ExecuteQuery.Parameters>
+    </ui:ExecuteQuery>
+    <ui:OutputDataTable DataTable="[DTMaxDocrunningTodaySP]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="832,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[strDocrunningTodaySP]" />
+    <Assign sap:VirtualizedContainerService.HintSize="832,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[ArrayDocRunningTodaySP]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[Split(strDocrunningTodaySP,vbCrLf)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[ArrayDocRunningTodaySP(1).ToString = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="832,220" sap2010:WorkflowViewState.IdRef="If_6">
+      <If.Then>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Int32">[intDocRunningMaxToDay]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Int32">1</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Then>
+      <If.Else>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Int32">[intDocRunningMaxToDay]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Int32">[CInt(ArrayDocRunningToday(1).ToString)]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Else>
+    </If>
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[ArrayRFANoSPInsertDocRunning]" DisplayName="QueryRFANoInsertDocNoRM" sap:VirtualizedContainerService.HintSize="832,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_9" ProviderName="System.Data.SqlClient" Sql="[QueryRFANoInsertDocNoSP]" ConnectionString="[StrConSQL]">
+      <ui:ExecuteQuery.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:ExecuteQuery.Parameters>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ExecuteQuery>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ArrayRFANoSPInsertDocRunning]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="832,775" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="ItemRFANoSP" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="478,654" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Name="DTResultUpdateDocSP" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,62" sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="[&quot;RFA No SP : &quot;+ItemRFANoSP(0).ToString]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,62" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[&quot;Query Update Docrunning : &quot;+UpdateDocRunningByRFANoOne+intDocRunningMaxToDay.ToString+UpdateDocRunningByRFANoTwo+ItemRFANoSP(0).ToString+&quot;'&quot;]" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,258" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DTResultUpdateDocSP]" DisplayName="SelectDocRunningToDay" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_10" ProviderName="System.Data.SqlClient" Sql="[UpdateDocRunningByRFANoOne+intDocRunningMaxToDay.ToString+UpdateDocRunningByRFANoTwo+ItemRFANoSP(0).ToString+&quot;'&quot;]" ConnectionString="[StrConSQL]">
+                    <ui:ExecuteQuery.Parameters>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:ExecuteQuery.Parameters>
+                  </ui:ExecuteQuery>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[intDocRunningMaxToDay]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[intDocRunningMaxToDay + 1]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <Assign sap:VirtualizedContainerService.HintSize="832,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[FileTPLSP]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["JV ตั้ง Reserve Spare Part Template.xlsx"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="832,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[FileTPLSP]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[PartTPL+FileTPLSP]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="832,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[FileNameReserveSP]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[PartTPL+PathFileProcessingSP]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[ArrayRFANoSPInsertData]" DisplayName="QueryRFANoInsertDocNoRM" sap:VirtualizedContainerService.HintSize="832,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_11" ProviderName="System.Data.SqlClient" Sql="[QueryRFANoInsertDataSP]" ConnectionString="[StrConSQL]">
+      <ui:ExecuteQuery.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:ExecuteQuery.Parameters>
+    </ui:ExecuteQuery>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="832,62" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="[&quot;Count : &quot;+ArrayRFANoSPInsertData.Rows.Count.ToString]" />
+    <If Condition="[ArrayRFANoSPInsertData.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="832,4268" sap2010:WorkflowViewState.IdRef="If_10">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="796,4088" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Default="JV ตั้ง Reserve Spare Part.xlsx" Name="FilenameReserveSPOnSAP" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[FileNameReserveSP]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="754,160" sap2010:WorkflowViewState.IdRef="CopyFile_3" Overwrite="True" Path="[FileTPLSP]" />
+          <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="754,3286" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[FileNameReserveSP]">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="720,3177" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ArrayRFANoSPInsertData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="678,3085" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="ItemRFANoSP" />
+                        </ActivityAction.Argument>
+                        <Sequence sap:VirtualizedContainerService.HintSize="644,2965" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="sd:DataTable" Name="DataOfDocRFANoSP" />
+                            <Variable x:TypeArguments="sd:DataTable" Name="DataOfDocLastLineRFANoSP" />
+                            <Variable x:TypeArguments="sd:DataTable" Name="DataOfDocLastSumSP" />
+                            <Variable x:TypeArguments="x:String" Name="ArrayLastDocSumSP" />
+                            <Variable x:TypeArguments="s:String[]" Name="SumLastLineSP" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="602,62" sap2010:WorkflowViewState.IdRef="WriteLine_14" Text="[&quot;RFA No : &quot;+ItemRFANoSP(0).ToString]" />
+                          <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DataOfDocRFANoSP]" DisplayName="Execute Query" sap:VirtualizedContainerService.HintSize="602,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_12" ProviderName="System.Data.SqlClient" Sql="[QueryCRRM+ItemRFANoSP(0).ToString+QueryLastCRRM]" ConnectionString="[StrConSQL]">
+                            <ui:ExecuteQuery.Parameters>
+                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                            </ui:ExecuteQuery.Parameters>
+                          </ui:ExecuteQuery>
+                          <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DataOfDocLastLineRFANoSP]" DisplayName="Query Last Line" sap:VirtualizedContainerService.HintSize="602,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_13" ProviderName="System.Data.SqlClient" Sql="[QueryCRRMLastLine+ItemRFANoSP(0).ToString+&quot;'&quot;]" ConnectionString="[StrConSQL]">
+                            <ui:ExecuteQuery.Parameters>
+                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                            </ui:ExecuteQuery.Parameters>
+                          </ui:ExecuteQuery>
+                          <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DataOfDocLastSumSP]" DisplayName="Query Last Line" sap:VirtualizedContainerService.HintSize="602,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_14" ProviderName="System.Data.SqlClient" Sql="[QueryCRRMSum+ItemRFANoSP(0).ToString+&quot;'&quot;]" ConnectionString="[StrConSQL]">
+                            <ui:ExecuteQuery.Parameters>
+                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                            </ui:ExecuteQuery.Parameters>
+                          </ui:ExecuteQuery>
+                          <ui:OutputDataTable DataTable="[DataOfDocLastSumSP]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="602,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[ArrayLastDocSumSP]" />
+                          <Assign sap:VirtualizedContainerService.HintSize="602,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="s:String[]">[SumLastLineSP]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="s:String[]">[Split(ArrayLastDocSumSP,vbCrLf)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="602,2225" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="sd:DataTable" Name="OTdataSheet" />
+                              <Variable x:TypeArguments="x:Int32" Name="RowExcel" />
+                              <Variable x:TypeArguments="sd:DataTable" Name="DTLastRowOnExcel" />
+                              <Variable x:TypeArguments="x:String" Name="ST_InsertByOrderRow" />
+                              <Variable x:TypeArguments="sd:DataTable" Name="DTLastRowOfInsertData" />
+                              <Variable x:TypeArguments="x:String" Name="ET_InsertByOrderRow" />
+                              <Variable x:TypeArguments="sd:DataTable" Name="DTLastRowOnExcelSP" />
+                              <Variable x:TypeArguments="x:String" Name="ST_InsertByOrderRowSP" />
+                              <Variable x:TypeArguments="x:String" Name="AddRowLastJVSP" />
+                              <Variable x:TypeArguments="sd:DataTable" Name="DTLastRowOfInsertDataSP" />
+                              <Variable x:TypeArguments="sd:DataTable" Name="OTdataSheetSP" />
+                              <Variable x:TypeArguments="x:Int32" Name="RowExcelSP" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="560,62" sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="open excel sp" />
+                            <ui:ExcelReadRange AddHeaders="True" DataTable="[DTLastRowOnExcelSP]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="560,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_4" Range="A1" SheetName="[SheetName]" />
+                            <Assign sap:VirtualizedContainerService.HintSize="560,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[ST_InsertByOrderRowSP]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[(DTLastRowOnExcelSP.Rows.Count+2).ToString]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="560,62" sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="[&quot;Start row insert : &quot;+ST_InsertByOrderRowSP]" />
+                            <ui:ExcelWriteRange AddHeaders="False" DataTable="[DataOfDocRFANoSP]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="560,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_3" SheetName="[SheetName]" StartingCell="[&quot;A&quot;+ST_InsertByOrderRowSP]" />
+                            <ui:ExcelReadRange AddHeaders="True" DataTable="[DTLastRowOfInsertDataSP]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="560,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_5" Range="A1" SheetName="[SheetName]" />
+                            <Assign sap:VirtualizedContainerService.HintSize="560,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[AddRowLastJVSP]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">["A"+(2+DTLastRowOfInsertDataSP.Rows.Count).ToString]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="560,62" sap2010:WorkflowViewState.IdRef="WriteLine_17" Text="[&quot;AddRowLastJVSP :&quot;+AddRowLastJVSP]" />
+                            <ui:ExcelWriteRange AddHeaders="False" DataTable="[DataOfDocLastLineRFANoSP]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="560,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_4" SheetName="[SheetName]" StartingCell="[AddRowLastJVSP]" />
+                            <ui:ExcelReadRange AddHeaders="False" DataTable="[OTdataSheetSP]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="560,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_6" SheetName="[SheetName]">
+                              <ui:ExcelReadRange.Range>
+                                <InArgument x:TypeArguments="x:String">
+                                  <Literal x:TypeArguments="x:String" Value="" />
+                                </InArgument>
+                              </ui:ExcelReadRange.Range>
+                            </ui:ExcelReadRange>
+                            <Assign sap:VirtualizedContainerService.HintSize="560,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[RowExcelSP]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">[Cint(ST_InsertByOrderRowSP)]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[OTdataSheetSP]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,976" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                              <ui:ForEachRow.Body>
+                                <ActivityAction x:TypeArguments="sd:DataRow">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRowSP" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,856" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If Condition="[RowExcelSP &lt;= 2+DTLastRowOfInsertDataSP.Rows.Count]" sap:VirtualizedContainerService.HintSize="484,358" sap2010:WorkflowViewState.IdRef="If_7">
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                          <Sequence.Variables>
+                                            <Variable x:TypeArguments="x:Object" Default="[&quot;ตั้ง Reserve RFA&quot;]" Name="ObjectCreateReserve" />
+                                          </Sequence.Variables>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:ExcelWriteCell Cell="[&quot;I&quot;+RowExcelSP.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="[SheetName]" Text="ตั้ง Reserve RFA" />
+                                        </Sequence>
+                                      </If.Then>
+                                    </If>
+                                    <If Condition="[RowExcelSP = OTdataSheetSP.Rows.Count]" sap:VirtualizedContainerService.HintSize="484,266" sap2010:WorkflowViewState.IdRef="If_8">
+                                      <If.Then>
+                                        <ui:ExcelWriteCell Cell="[&quot;S&quot;+RowExcelSP.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="[SheetName]" Text="[SumLastLineSP(1)]" />
+                                      </If.Then>
+                                    </If>
+                                    <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">[RowExcelSP]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">[RowExcelSP+1]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:ForEachRow.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:ForEachRow>
+                          </Sequence>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachRow.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ForEachRow>
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+          </ui:ExcelApplicationScope>
+          <ui:PathExists DisplayName="Path Exists" Exists="[ExitsFileReserveSP]" sap:VirtualizedContainerService.HintSize="754,90" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[FileNameReserveSP]" PathType="File" />
+          <If Condition="[ExitsFileReserveSP]" sap:VirtualizedContainerService.HintSize="754,340" sap2010:WorkflowViewState.IdRef="If_9">
+            <If.Then>
+              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[PartReserve+PathFileReserveSP+FilenameReserveSPOnSAP]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="CopyFile_4" Overwrite="True" Path="[FileNameReserveSP]" />
+            </If.Then>
+          </If>
+        </Sequence>
+      </If.Then>
+    </If>
+  </Sequence>
+</Activity>
